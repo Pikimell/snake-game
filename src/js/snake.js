@@ -45,7 +45,7 @@ export class Snake {
     }
   }
 
-  cahngeDirection(keyCode) {
+  changeDirection(keyCode) {
     switch (keyCode) {
       case 'KeyW':
         if (this.direction != DIRECTIONS.DOWN) this.direction = DIRECTIONS.UP;

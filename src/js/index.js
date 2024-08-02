@@ -11,8 +11,8 @@ const options = {
   fps: 100,
 };
 
-const snake = new Snake(25);
-const map = new SnakeMap(snake, 39, 34, refs.canvas);
+const snake = new Snake(3);
+const map = new SnakeMap(snake, refs.canvas);
 
 refs.startBtn.addEventListener('click', e => {
   if (options.idInterval) {
@@ -34,5 +34,5 @@ refs.startBtn.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => {
-  snake.cahngeDirection(e.code);
+  snake.changeDirection(e.code);
 });

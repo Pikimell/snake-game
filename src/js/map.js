@@ -7,10 +7,8 @@ export class SnakeMap {
   #snakeWidth = 20;
   food;
 
-  constructor(snake, lenX, lenY, canvas) {
+  constructor(snake, canvas) {
     this.snake = snake;
-    this.lenX = lenX;
-    this.lenY = lenY;
     this.canvas = canvas.getContext('2d');
 
     this.rectCanvas = {
@@ -18,8 +16,11 @@ export class SnakeMap {
       height: canvas.height,
     };
 
+    this.lenX = Math.floor(canvas.width / this.#snakeWidth) - 1;
+    this.lenY = Math.floor(canvas.height / this.#snakeWidth) - 1;
+
     this.canvas.fillStyle = 'green';
-    this.genereteFood();
+    this.generateFood();
   }
 
   showMap() {
@@ -65,7 +66,7 @@ export class SnakeMap {
     });
   }
 
-  genereteFood() {
+  generateFood() {
     const x = Math.round(Math.random() * this.lenX);
     const y = Math.round(Math.random() * this.lenY);
     this.food = { x, y };
@@ -88,7 +89,7 @@ export class SnakeMap {
       this.snake.snakeHead.x === this.food.x &&
       this.snake.snakeHead.y === this.food.y
     ) {
-      this.genereteFood();
+      this.generateFood();
       this.snake.increaseSnake();
     }
 
@@ -96,7 +97,7 @@ export class SnakeMap {
       this.lenX - this.snake.snakeHead.x === this.food.x &&
       this.lenY - this.snake.snakeHead.y === this.food.y
     ) {
-      this.genereteFood();
+      this.generateFood();
       this.snake.increaseSnake();
     }
   }
