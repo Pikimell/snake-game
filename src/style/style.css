@@ -1,0 +1,39 @@
+/* ================================================== */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(127, 127, 127);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.box {
+  backdrop-filter: blur(20px);
+  background: #ffffff6c;
+  border-radius: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 10px;
+  height: fit-content;
+  width: fit-content;
+  overflow: auto;
+  max-width: 90vw;
+  min-width: 600px;
+  max-height: 90vh;
+}
+
+canvas {
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* ================================================== */
